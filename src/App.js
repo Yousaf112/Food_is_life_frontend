@@ -4,10 +4,14 @@ import "./App.css";
 import Homepage from "./pages/Homepage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <div className="App">
+      <>
+        <Navbar />
+      </>
       <BrowserRouter>
         <Routes>
           <Route path="/">

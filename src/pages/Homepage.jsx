@@ -1,7 +1,11 @@
 import React from "react";
 
 const Homepage = () => {
-  return <div>Homepage</div>;
+  return (
+    <div>
+      <img src=""></img>
+    </div>
+  );
 };
 
 export default Homepage;
