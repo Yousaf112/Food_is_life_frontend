@@ -2,8 +2,10 @@ import logo from "./logo.svg";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Homepage from "./pages/Homepage";
-import LoginPage from "./pages/LoginPage";
-import SignupPage from "./pages/SignupPage";
+import LoginPageNGO from "./pages/LoginPageNGO";
+import LoginPageRestaurants from "./pages/LoginPageRestaurants";
+import SignupPageNGO from "./pages/SignupPageNGO";
+import SignupPageRestaurants from "./pages/SignupPageRestaurants";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -17,11 +19,17 @@ function App() {
           <Route path="/">
             <Route index element={<Homepage />} />
           </Route>
-          <Route path="/login">
-            <Route index element={<LoginPage />} />
+          <Route path="/LoginForRestaurants">
+            <Route index element={<LoginPageRestaurants />} />
           </Route>
-          <Route path="/signup">
-            <Route index element={<SignupPage />} />
+          <Route path="/SignupForRestaurants">
+            <Route index element={<SignupPageRestaurants />} />
+          </Route>
+          <Route path="/LoginForNGO">
+            <Route index element={<LoginPageNGO />} />
+          </Route>
+          <Route path="/SignupForNGO">
+            <Route index element={<SignupPageNGO />} />
           </Route>
         </Routes>
       </BrowserRouter>

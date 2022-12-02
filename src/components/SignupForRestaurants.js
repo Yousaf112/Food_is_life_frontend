@@ -1,36 +1,36 @@
 import { useState } from "react";
-import { loginFields } from "../constants/formFields";
+import { signupFieldsForNGO } from "../constants/formFields";
 import FormAction from "./FormAction";
-import FormExtra from "./FormExtra";
 import Input from "./Input";
 
-const fields = loginFields;
+const fields = signupFieldsForNGO;
 let fieldsState = {};
+
 fields.forEach((field) => (fieldsState[field.id] = ""));
 
-export default function Login() {
-  const [loginState, setLoginState] = useState(fieldsState);
+export default function SignupForRestaurants() {
+  const [signupState, setSignupState] = useState(fieldsState);
 
-  const handleChange = (e) => {
-    setLoginState({ ...loginState, [e.target.id]: e.target.value });
-  };
+  const handleChange = (e) =>
+    setSignupState({ ...signupState, [e.target.id]: e.target.value });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    authenticateUser();
+    console.log(signupState);
+    createAccount();
   };
 
-  //Handle Login API Integration here
-  const authenticateUser = () => {};
+  //handle Signup API Integration here
+  const createAccount = () => {};
 
   return (
     <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-      <div className="-space-y-px">
+      <div className="">
         {fields.map((field) => (
           <Input
             key={field.id}
             handleChange={handleChange}
-            value={loginState[field.id]}
+            value={signupState[field.id]}
             labelText={field.labelText}
             labelFor={field.labelFor}
             id={field.id}
@@ -40,10 +40,8 @@ export default function Login() {
             placeholder={field.placeholder}
           />
         ))}
+        <FormAction handleSubmit={handleSubmit} text="Signup" />
       </div>
-
-      <FormExtra />
-      <FormAction handleSubmit={handleSubmit} text="Login" />
     </form>
   );
 }

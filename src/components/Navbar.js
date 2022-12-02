@@ -17,16 +17,16 @@ const Navbar = () => {
           </a>
           <div class="flex items-center">
             <a
-              href="tel:+923432371172"
+              href="/LoginForNGO"
               class="mr-6 text-sm font-medium text-white-500 dark:text-white hover:underline"
             >
-              (+92) 343 2371172
+              Login As NGO
             </a>
             <a
-              href="/Login"
+              href="/LoginForRestaurants"
               class="text-sm font-medium text-black-600 dark:text-blue-500 hover:underline"
             >
-              Login
+              Login as Restaurant
             </a>
           </div>
         </div>
