@@ -6,14 +6,11 @@ import LoginPageNGO from "./pages/LoginPageNGO";
 import LoginPageRestaurants from "./pages/LoginPageRestaurants";
 import SignupPageNGO from "./pages/SignupPageNGO";
 import SignupPageRestaurants from "./pages/SignupPageRestaurants";
-import Navbar from "./components/Navbar";
+import Dashboard from "./containers/Dashboard";
 
 function App() {
   return (
     <div className="App">
-      <>
-        <Navbar />
-      </>
       <BrowserRouter>
         <Routes>
           <Route path="/">
@@ -30,6 +27,9 @@ function App() {
           </Route>
           <Route path="/SignupForNGO">
             <Route index element={<SignupPageNGO />} />
+          </Route>
+          <Route path="/Dashboard">
+            <Route index element={<Dashboard />} />
           </Route>
         </Routes>
       </BrowserRouter>
